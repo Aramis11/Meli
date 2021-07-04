@@ -2,7 +2,7 @@ package com.example.meli.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ResponseModel(
+data class ProductResponseModel(
 
     @SerializedName("site_id") val siteId: String,
     @SerializedName("query") val query: String,
