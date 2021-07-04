@@ -8,7 +8,7 @@ data class ProductModel(
     @SerializedName("site_id") val productSiteId: String,
     @SerializedName("title") val productTitle: String,
     @SerializedName("price") val productPrice: Int,
-    @SerializedName("condition") val productCondition: Int,
+    @SerializedName("condition") val productCondition: String,
     @SerializedName("thumbnail") val productImage: String,
 
     //Information to display in the product detail
