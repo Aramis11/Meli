@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">meli</string>
+    <string name="app_name">Challenge MELI</string>
+    <string name="search_product">Buscar producto</string>
 </resources>
