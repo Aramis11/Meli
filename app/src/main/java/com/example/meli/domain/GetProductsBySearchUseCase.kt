@@ -7,5 +7,6 @@ class GetProductsBySearchUseCase {
 
     private val repository = ProductRepository()
 
-    suspend operator fun invoke(): ProductResponseModel? = repository.getAllProducts()
+    suspend operator fun invoke(product: String): ProductResponseModel? =
+        repository.getAllProducts(product = product)
 }

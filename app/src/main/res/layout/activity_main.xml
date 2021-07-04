@@ -6,9 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.MainActivity">
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/svSearchViewProduct"
         android:layout_width="0dp"
+        app:iconifiedByDefault="false"
+        app:queryHint="@string/search_product"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

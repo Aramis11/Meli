@@ -7,8 +7,8 @@ class ProductRepository {
 
     private val api = ProductService()
 
-    suspend fun getAllProducts(): ProductResponseModel? {
-        return api.getProducts()
+    suspend fun getAllProducts(product: String): ProductResponseModel? {
+        return api.getProducts(product = product)
     }
 
 }

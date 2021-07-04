@@ -14,9 +14,9 @@ class ProductViewModel : ViewModel() {
     //Use Case
     var getAllProducts = GetProductsBySearchUseCase()
 
-    fun onCreate() {
+    fun onSearch(product: String) {
         viewModelScope.launch {
-            val result = getAllProducts()
+            val result = getAllProducts(product = product)
             if(!result?.product.isNullOrEmpty()){
                 productModelList.postValue(result!!)
             }
