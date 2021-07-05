@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.meli.R
@@ -42,13 +43,18 @@ class HomeSearchFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryT
 
     private fun responseProductListObserver() {
         productViewModel.productModelList.observe(requireActivity(), { product ->
-            productList.clear()
+            notifyChangeInRecycler()
             productList.addAll(product.product)
-            adapter.notifyDataSetChanged()
+
+        })
+
+        productViewModel.isLoadingProgressBar.observe(requireActivity(), { stateProgress ->
+            mBinding.pbProducts.isVisible = stateProgress
         })
     }
 
     private fun loadProductsBySearch(query: String) {
+        notifyChangeInRecycler()
         productViewModel.onSearch(product = query)
         mBinding.svSearchViewProduct.clearFocus()
         Utils().hideKeyboard(requireActivity())
@@ -59,6 +65,11 @@ class HomeSearchFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryT
         mBinding.rvSearchProduct.layoutManager = LinearLayoutManager(requireContext())
         mBinding.rvSearchProduct.adapter = adapter
 
+    }
+
+    private fun notifyChangeInRecycler(){
+        productList.clear()
+        adapter.notifyDataSetChanged()
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
