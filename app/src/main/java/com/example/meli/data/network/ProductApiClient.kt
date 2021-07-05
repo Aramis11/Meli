@@ -7,8 +7,6 @@ import retrofit2.http.Url
 
 
 interface ProductApiClient {
-
     @GET
     suspend fun getProducts(@Url url: String): Response<ProductResponseModel>
-
 }

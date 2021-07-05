@@ -10,7 +10,9 @@ import com.example.meli.databinding.ActivityMainBinding
 import com.example.meli.ui.adapters.product.ProductAdapter
 import com.example.meli.ui.viewmodel.ProductViewModel
 import com.example.meli.utils.Utils
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     private lateinit var binding: ActivityMainBinding
@@ -24,19 +26,21 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         setContentView(binding.root)
         binding.svSearchViewProduct.setOnQueryTextListener(this)
         initRecyclerView()
+        responseProductListObserver()
     }
 
+    private fun responseProductListObserver() {
+        productViewModel.productModelList.observe(this, { product ->
+            productList.clear()
+            productList.addAll(product.product)
+            adapter.notifyDataSetChanged()
+        })
+    }
 
     private fun loadProductsBySearch(query: String) {
         productViewModel.onSearch(product = query)
-        runOnUiThread {
-            productViewModel.productModelList.observe(this, { product ->
-                productList.clear()
-                productList.addAll(product.product)
-                adapter.notifyDataSetChanged()
-            })
-            Utils().hideKeyboard(this)
-        }
+        binding.svSearchViewProduct.clearFocus()
+        Utils().hideKeyboard(this)
     }
 
     private fun initRecyclerView() {
