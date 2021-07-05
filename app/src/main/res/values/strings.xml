@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Challenge MELI</string>
     <string name="search_product">Buscar producto</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_installments">Cuotas: </string>
+    <string name="title_installments_values">Valor cuotas: </string>
+    <string name="title_available">Disponibles:  </string>
 </resources>

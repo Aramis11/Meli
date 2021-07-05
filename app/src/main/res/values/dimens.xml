@@ -7,5 +7,7 @@
     <dimen name="card_image_height">130sp</dimen>
     <dimen name="card_image_width">110sp</dimen>
     <dimen name="stroke_card">2sp</dimen>
+    <dimen name="card_image_detail_height">180sp</dimen>
+    <dimen name="card_image_detail_width">150sp</dimen>
 
 </resources>
