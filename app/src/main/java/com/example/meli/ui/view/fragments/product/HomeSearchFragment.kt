@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -45,11 +46,18 @@ class HomeSearchFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryT
         productViewModel.productModelList.observe(requireActivity(), { product ->
             notifyChangeInRecycler()
             productList.addAll(product.product)
-
         })
 
         productViewModel.isLoadingProgressBar.observe(requireActivity(), { stateProgress ->
             mBinding.pbProducts.isVisible = stateProgress
+        })
+
+        productViewModel.isErrorMessage.observe(requireActivity(), { errorMessage ->
+            if (errorMessage != "") {
+                Toast.makeText(requireContext(),
+                    errorMessage,
+                    Toast.LENGTH_LONG).show()
+            }
         })
     }
 
@@ -58,6 +66,8 @@ class HomeSearchFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryT
         productViewModel.onSearch(product = query)
         mBinding.svSearchViewProduct.clearFocus()
         Utils().hideKeyboard(requireActivity())
+
+
     }
 
     private fun initRecyclerView() {
@@ -67,7 +77,7 @@ class HomeSearchFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryT
 
     }
 
-    private fun notifyChangeInRecycler(){
+    private fun notifyChangeInRecycler() {
         productList.clear()
         adapter.notifyDataSetChanged()
     }
