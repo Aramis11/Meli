@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -43,6 +45,7 @@ dependencies {
     def picasso_version = "2.71828"
     def retrofit_version = "2.9.0"
     def coroutines_version = "1.4.1"
+    def Dagger_Hilt_version = "2.35"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
@@ -70,6 +73,10 @@ dependencies {
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
+    //DaggerHilt
+    implementation("com.google.dagger:hilt-android:$Dagger_Hilt_version")
+    kapt("com.google.dagger:hilt-android-compiler:$Dagger_Hilt_version")
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
 
 
 
