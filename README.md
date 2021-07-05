@@ -1,9 +1,10 @@
 # Mercado Libre - MVVM - Clean architecture
 ## Challenge MELI
 
-<img src="./images/IMG_1.jpeg">
-<img src="./images/IMG_2.jpeg">
-<img src="./images/IMG_3.jpeg">
+![IMG_1](https://user-images.githubusercontent.com/39841298/124518598-73b09d80-ddac-11eb-87b7-78b685c0916e.jpeg)
+![IMG_2](https://user-images.githubusercontent.com/39841298/124518670-a5c1ff80-ddac-11eb-8daa-9c66f9494f4e.jpeg)
+![IMG_3](https://user-images.githubusercontent.com/39841298/124518681-ace90d80-ddac-11eb-8705-56d9e73613ea.jpeg)
+
 
 Este repositorio contiene una aplicación de prueba que implementa los servicios de Test de Mercadolibre. La implementación de la arquitectura esta basada en MVVM usando Kotlin,  ViewModel
 LiveData
