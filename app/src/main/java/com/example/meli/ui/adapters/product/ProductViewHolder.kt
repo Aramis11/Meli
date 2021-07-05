@@ -1,25 +1,36 @@
 package com.example.meli.ui.adapters.product
 
+import android.content.Context
 import android.view.View
-import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import com.example.meli.R
 import com.example.meli.data.model.ProductModel
 import com.example.meli.databinding.ItemProductBinding
+import com.example.meli.ui.view.fragments.product.HomeSearchFragmentDirections
 import com.example.meli.utils.Utils
-import com.squareup.picasso.Picasso
 
-class ProductViewHolder(view: View): RecyclerView.ViewHolder(view) {
+class ProductViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemProductBinding.bind(view)
 
-    fun bind(product: ProductModel){
-        binding.tvProductName.text = product.productTitle
-        binding.tvPriceProduct.text = Utils().convertStringInCurrency(product.productPrice.toString())
-        binding.tvConditionProduct.text = product.productCondition
-        Picasso.get().load(product.productImage).into(binding.ivProductImage)
+    fun bind(product: ProductModel) {
 
-        itemView.setOnClickListener{
-            Toast.makeText(itemView.context, "Product ${product.productTitle}", Toast.LENGTH_LONG).show()
+        binding.apply {
+            tvProductName.text = product.productTitle
+            tvPriceProduct.text = Utils().convertStringInCurrency(product.productPrice.toString())
+            tvAvailableProduct.text = product.productAvailable.toString()
+            ivProductImage.load(product.productImage) {
+                crossfade(true)
+                crossfade(1000)
+            }
+        }
+
+        itemView.setOnClickListener { view ->
+            val direction =
+                HomeSearchFragmentDirections.actionHomeSearchFragmentToDetailFragment(product)
+            view.findNavController().navigate(direction)
         }
     }
 }

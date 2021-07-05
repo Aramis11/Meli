@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id("dagger.hilt.android.plugin")
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -40,12 +42,13 @@ android {
 
 dependencies {
 
+
     def lifecycle_version = "2.3.1"
-    def activity_view_model_version = "1.2.3"
-    def picasso_version = "2.71828"
+    def coil_version = "1.1.1"
     def retrofit_version = "2.9.0"
     def coroutines_version = "1.4.1"
-    def Dagger_Hilt_version = "2.35"
+    def dagger_hilt_version = "2.35"
+    def navigation_version = "2.3.5"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
@@ -60,12 +63,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
 
-    //Activity -> ViewModel
-    implementation "androidx.activity:activity-ktx:$activity_view_model_version"
-
-    //Picasso
-    implementation "com.squareup.picasso:picasso:$picasso_version"
-
     //NetWorking
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
@@ -74,9 +71,17 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
     //DaggerHilt
-    implementation("com.google.dagger:hilt-android:$Dagger_Hilt_version")
-    kapt("com.google.dagger:hilt-android-compiler:$Dagger_Hilt_version")
+    implementation("com.google.dagger:hilt-android:$dagger_hilt_version")
+    kapt("com.google.dagger:hilt-android-compiler:$dagger_hilt_version")
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+
+    //Navigation
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    //coil
+    implementation("io.coil-kt:coil:$coil_version")
 
 
 

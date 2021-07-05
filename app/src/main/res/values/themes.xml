@@ -18,4 +18,13 @@
     <style name="Theme.Meli.TextInputGreenRoundedBorder">
         <item name="android:background">@drawable/ly_rounded_yellow</item>
     </style>
+
+    <style name="Theme.Meli.TextLabelInput">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/label_detail_product</item>
+    </style>
+
+    <style name="Theme.Meli.ProgressColor">
+        <item name="colorAccent">@color/primaryColor</item>
+    </style>
 </resources>
