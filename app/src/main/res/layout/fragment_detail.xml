@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.view.fragments.product.DetailFragment">
+
+
+        <ImageView
+            android:id="@+id/ivProductDetailImage"
+            android:layout_width="@dimen/card_image_detail_width"
+            android:layout_height="@dimen/card_image_detail_height"
+            android:layout_marginTop="32dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="0dp"
+            android:layout_height="2sp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/primaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivProductDetailImage"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/tvProductNameDetail"
+            style="@style/Theme.Meli.TextLabelInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/viewTop"
+            app:layout_constraintStart_toStartOf="@+id/viewTop"
+            app:layout_constraintTop_toBottomOf="@+id/viewTop" />
+
+        <TextView
+            android:id="@+id/tvPriceProductDetail"
+            style="@style/Theme.Meli.TextLabelInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvProductNameDetail"
+            app:layout_constraintStart_toStartOf="@+id/tvProductNameDetail"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductNameDetail" />
+
+        <TextView
+            android:id="@+id/tvTitleAvailableDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/title_available"
+            android:textColor="@color/available"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvPriceProductDetail"
+            app:layout_constraintStart_toStartOf="@+id/tvPriceProductDetail"
+            app:layout_constraintTop_toBottomOf="@+id/tvPriceProductDetail" />
+
+        <TextView
+            android:id="@+id/tvAvailableProductDetail"
+            style="@style/Theme.Meli.TextLabelInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/tvTitleAvailableDetail"
+            app:layout_constraintTop_toTopOf="@+id/tvTitleAvailableDetail" />
+
+        <TextView
+            android:id="@+id/tvQuantityDetail"
+            style="@style/Theme.Meli.TextLabelInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvPriceProductDetail"
+            app:layout_constraintStart_toStartOf="@+id/tvPriceProductDetail"
+            app:layout_constraintTop_toBottomOf="@+id/tvAvailableProductDetail" />
+
+        <TextView
+            android:id="@+id/tvAmountDetail"
+            style="@style/Theme.Meli.TextLabelInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvQuantityDetail"
+            app:layout_constraintStart_toStartOf="@+id/tvQuantityDetail"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuantityDetail" />
+
+        <TextView
+            android:id="@+id/tvStateProductDetail"
+            style="@style/Theme.Meli.TextLabelInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvAmountDetail"
+            app:layout_constraintStart_toStartOf="@+id/tvAmountDetail"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmountDetail" />
+
+        <View
+            android:id="@+id/viewBottom"
+            android:layout_width="0dp"
+            android:layout_height="2sp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/primaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStateProductDetail"
+            tools:ignore="SmallSp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivProductImage"
             app:layout_constraintTop_toTopOf="@+id/ivProductImage" />
@@ -45,13 +45,27 @@
             app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
 
         <TextView
-            android:id="@+id/tvConditionProduct"
-            android:layout_width="0dp"
+            android:id="@+id/tvTitleAvailable"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/tvPriceProduct"
+            android:layout_marginEnd="4dp"
+            android:text="@string/title_available"
+            android:textColor="@color/available"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tvAvailableProduct"
             app:layout_constraintStart_toStartOf="@+id/tvPriceProduct"
             app:layout_constraintTop_toBottomOf="@+id/tvPriceProduct" />
+
+        <TextView
+            android:id="@+id/tvAvailableProduct"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvTitleAvailable"
+            app:layout_constraintTop_toTopOf="@+id/tvTitleAvailable" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

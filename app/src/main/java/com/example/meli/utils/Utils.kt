@@ -24,10 +24,7 @@ class Utils {
             if (textValue != "" && textValue != "$") {
                 val formatter: NumberFormat = NumberFormat.getCurrencyInstance(Locale.US)
                 formatter.maximumFractionDigits = 0
-                var cleanString = textValue.replace("$", "")
-                cleanString = cleanString.replace(".", "")
-                cleanString = cleanString.replace(",", "")
-                val parsed = cleanString.toDouble()
+                val parsed = textValue.toDouble()
                 var formatted = formatter.format(parsed)
                 formatted = formatted.replace(",", ".")
                 formatted
@@ -37,5 +34,12 @@ class Utils {
         } catch (_: Exception) {
             ""
         }
+    }
+
+    fun convertFloatInCurrency(value: Float): String {
+        val formatter: NumberFormat = NumberFormat.getCurrencyInstance(Locale.US)
+        formatter.maximumFractionDigits = 0
+        val formatted = formatter.format(value)
+        return formatted.replace(",", ".")
     }
 }

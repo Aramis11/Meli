@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="label_detail_product">16sp</dimen>
     <dimen name="corner_radius">16sp</dimen>
     <dimen name="card_elevation">32sp</dimen>
     <dimen name="card_height">180sp</dimen>
     <dimen name="card_image_height">130sp</dimen>
     <dimen name="card_image_width">110sp</dimen>
     <dimen name="stroke_card">2sp</dimen>
+    <dimen name="card_image_detail_height">180sp</dimen>
+    <dimen name="card_image_detail_width">150sp</dimen>
 
 </resources>
